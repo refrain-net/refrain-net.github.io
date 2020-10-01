@@ -157,10 +157,16 @@ body {
   border-bottom-color: var(--red);
 }
 .TVOxHpZ9[category = 'content'] .eFcynxxU {
-  border-bottom-color: var(--green);
+  border-bottom-color: var(--yellow);
 }
 .TVOxHpZ9[category = 'service'] .eFcynxxU {
   border-bottom-color: var(--blue);
+}
+.TVOxHpZ9[category = 'pixiv'] .eFcynxxU {
+  border-bottom-color: var(--cyan);
+}
+.TVOxHpZ9[category = 'youtube'] .eFcynxxU {
+  border-bottom-color: var(--red);
 }
 .TVOxHpZ9[category = 'other'] .eFcynxxU {
   border-bottom-color: var(--gray);
