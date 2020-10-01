@@ -31,6 +31,11 @@ HTMLSelectElement.prototype.getSelection = function () {
 String.prototype.replaceAll = function (regexp, newSubstr) {
   return this.replace(new RegExp(regexp, 'g'), newSubstr);
 };
+String.prototype.toElement = function () {
+  const div = document.createElement('div');
+  div.innerHTML = this;
+  return div.firstElementChild;
+};
 document.getQueryParameters = () => location.search.slice(1).split('&').map(currentValue => currentValue.split('=')).reduce((accumulator, currentValue) => {
   const [ key, value ] = currentValue;
   accumulator[key] = value || key;
