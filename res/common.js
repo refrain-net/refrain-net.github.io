@@ -28,6 +28,8 @@ const categories = {
   article: '記事',
   content: 'コンテンツ',
   service: 'サービス',
+  pixiv: 'Pixiv',
+  youtube: 'YouTube',
   other: 'その他'
 };
 let { theme } = document.getQueryParameters();
