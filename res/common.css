@@ -28,6 +28,7 @@ html {
   user-select: none;
 }
 body {
+  line-height: 1;
   margin: 0 auto;
   max-width: 51.2rem;
 }
