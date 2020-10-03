@@ -157,10 +157,7 @@ body {
   text-decoration: none;
 }
 .TVOxHpZ9[category = 'article'] .eFcynxxU {
-  border-bottom-color: var(--red);
-}
-.TVOxHpZ9[category = 'content'] .eFcynxxU {
-  border-bottom-color: var(--yellow);
+  border-bottom-color: var(--green);
 }
 .TVOxHpZ9[category = 'service'] .eFcynxxU {
   border-bottom-color: var(--blue);
