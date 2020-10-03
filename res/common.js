@@ -26,12 +26,13 @@ mWYXHFlu.addEventListener('keydown', event => {
 SYaLdKxJ.addEventListener('click', event => location.href = `/?keyword=${mWYXHFlu.value}`);
 const categories = {
   article: '記事',
-  content: 'コンテンツ',
-  service: 'サービス',
+  other: 'その他',
   pixiv: 'Pixiv',
-  youtube: 'YouTube',
-  other: 'その他'
+  service: 'サービス',
+  youtube: 'YouTube'
 };
+/*
 let { theme } = document.getQueryParameters();
 if (theme !== 'dark') theme = 'light';
 document.documentElement.setAttribute('theme', theme);
+*/
