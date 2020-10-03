@@ -367,7 +367,7 @@ body {
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
     grid-template-areas: 'byGCb13G Yzqv6tkI'
-                         'YFoSPTA3 YFoSPTA3';
+                         'mvUPRULS mvUPRULS';
   }
   #byGCb13G {
     grid-area: byGCb13G;
@@ -377,8 +377,8 @@ body {
     max-height: 2rem;
   }
   /** Breadcrumbs */
-  #YFoSPTA3 {
-    grid-area: YFoSPTA3;
+  #mvUPRULS {
+    grid-area: mvUPRULS;
     margin: 0 1rem;
   }
   /** Search Form */
