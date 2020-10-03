@@ -48,6 +48,9 @@ body {
   max-width: 100%;
 }
 /** Breadcrumbs */
+#mvUPRULS {
+  margin: 1rem;
+}
 #YFoSPTA3 {
   display: flex;
   margin: 0;
@@ -97,6 +100,9 @@ body {
   white-space: nowrap;
 }
 /** Search Form */
+#mvUPRULS {
+  margin: 1rem;
+}
 #Yzqv6tkI {
   display: flex;
   margin: 0 1rem;
