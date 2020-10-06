@@ -36,3 +36,4 @@ let { theme } = document.getQueryParameters();
 if (theme !== 'dark') theme = 'light';
 document.documentElement.setAttribute('theme', theme);
 */
+if (/ip(one|(a|o)d)|android.*mobile/i.test(navigator.userAgent)) document.documentElement.setAttribute('sp', true);
