@@ -145,16 +145,6 @@ body {
 .W1JhWxuv {
   width: 50%;
 }
-.eFcynxxU {
-  border-bottom: solid 0.5rem transparent;
-  display: block;
-  margin: 0;
-  margin-bottom: 1rem;
-  overflow: hidden;
-  text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 .TVOxHpZ9 {
   background: var(--background);
   border: solid 0.1rem var(--background-accent);
@@ -164,23 +154,31 @@ body {
   padding: 1rem;
   margin: 0.5rem;
   text-decoration: none;
-  .eFcynxxU & {
-    &[category = 'article'] {
-      border-bottom-color: var(--green);
-    }
-    &[category = 'service'] {
-      border-bottom-color: var(--blue);
-    }
-    &[category = 'pixiv'] {
-      border-bottom-color: var(--cyan);
-    }
-    &[category = 'youtube'] {
-      border-bottom-color: var(--red);
-    }
-    &[category = 'other'] {
-      border-bottom-color: var(--gray);
-    }
+  &[category = 'article'] .eFcynxxU {
+    border-bottom-color: var(--green);
   }
+  &[category = 'service'] .eFcynxxU {
+    border-bottom-color: var(--blue);
+  }
+  &[category = 'pixiv'] .eFcynxxU {
+    border-bottom-color: var(--cyan);
+  }
+  &[category = 'youtube'] .eFcynxxU {
+    border-bottom-color: var(--red);
+  }
+  &[category = 'other'] .eFcynxxU {
+    border-bottom-color: var(--gray);
+  }
+}
+.eFcynxxU {
+  border-bottom: solid 0.5rem transparent;
+  display: block;
+  margin: 0;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .RaWchbnJ {
   position: relative;
