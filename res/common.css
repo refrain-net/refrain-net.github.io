@@ -1,10 +1,10 @@
 @charset 'utf-8';
 :root {
-  --color: var(--black);
-  --color-accent: var(--white);
   --background: var(--white);
   --background-accent: var(--black);
-  --Oj1DovqO-filter: none;
+  --color: var(--black);
+  --color-accent: var(--white);
+  --font: 10px serif;
   --loading-marker-0: 0 4rem 0 0;
   --loading-marker-1: 2.82rem 2.82rem 0 0;
   --loading-marker-2: 4rem 0 0 0;
@@ -14,19 +14,25 @@
   --loading-marker-6: -4rem 0 0 0;
   --loading-marker-7: -2.82rem 2.82rem 0 0;
 }
+:root:not([sp]) {
+  --font: 20px serif;
+}
 /*
 :root[theme = 'dark'] {
-  --color: var(--white);
-  --color-accent: var(--black);
   --background: var(--black);
   --background-accent: var(--white);
-  --Oj1DovqO-filter: invert();
+  --color: var(--white);
+  --color-accent: var(--black);
+  --Oj1DovqO-filter: invert() or none;
+}
+#Oj1DovqO {
+  filter: var(--Oj1DovqO-filter);
 }
 */
 html {
   background: var(--background);
   color: var(--color);
-  font: 10px serif;
+  font: var(--font);
   user-select: none;
 }
 body {
@@ -44,7 +50,6 @@ body {
 }
 #Oj1DovqO {
   display: block;
-  filter: var(--Oj1DovqO-filter);
   max-width: 100%;
 }
 /** Breadcrumbs */
