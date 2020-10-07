@@ -2,25 +2,91 @@
 ---
 
 @charset 'utf-8';
-:root {
-  --background: var(--white);
-  --background-accent: var(--black);
-  --color: var(--black);
-  --color-accent: var(--white);
-  --font: 10px serif;
-  --loading-marker-0: 0 4rem 0 0;
-  --loading-marker-1: 2.82rem 2.82rem 0 0;
-  --loading-marker-2: 4rem 0 0 0;
-  --loading-marker-3: 2.82rem -2.82rem 0 0;
-  --loading-marker-4: 0 -4rem 0 0;
-  --loading-marker-5: -2.82rem -2.82rem 0 0;
-  --loading-marker-6: -4rem 0 0 0;
-  --loading-marker-7: -2.82rem 2.82rem 0 0;
+
+@import 'color';
+
+$background: var(--white);
+$background-accent: var(--black);
+$color: var(--black);
+$color-accent: var(--white);
+$font: 10px serif;
+$loading-marker-0: 0 4rem 0 0;
+$loading-marker-1: 2.82rem 2.82rem 0 0;
+$loading-marker-2: 4rem 0 0 0;
+$loading-marker-3: 2.82rem -2.82rem 0 0;
+$loading-marker-4: 0 -4rem 0 0;
+$loading-marker-5: -2.82rem -2.82rem 0 0;
+$loading-marker-6: -4rem 0 0 0;
+$loading-marker-7: -2.82rem 2.82rem 0 0;
+$categories: 'article', 'service', 'pixiv', 'youtube', 'other';
+$breakpoints: (
+  'pc': 'screen and (min-width: 1024px)'
+);
+
+@function color-by-category($category) {
+  $result: transparent;
+  @if $category == 'article' {
+    $result: $green;
+  } @else if $category == 'service' {
+    $result: $blue;
+  } @else if $category == 'pixiv' {
+    $result: $cyan;
+  } @else if $category == 'youtube' {
+    $result: $red;
+  } @else if $category == 'other' {
+    $result: $gray;
+  }
+  @return $result;
+}
+
+@mixin media-query($breakpoint: pc) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@include media-query {
+  $font: 10px;
+  #Zh6Jspc7 {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 'byGCb13G Yzqv6tkI'
+                         'mvUPRULS mvUPRULS';
+  }
+  #byGCb13G {
+    grid-area: byGCb13G;
+    margin: 0;
+  }
+  #Oj1DovqO {
+    max-height: 2rem;
+  }
+  /** Breadcrumbs */
+  #mvUPRULS {
+    grid-area: mvUPRULS;
+    margin: 0 1rem;
+  }
+  /** Search Form */
+  #Yzqv6tkI {
+    grid-area: Yzqv6tkI;
+    margin: 1rem;
+  }
+  #mWYXHFlu {
+    margin: 0;
+    max-width: 20rem;
+  }
+  #SYaLdKxJ {
+    display: none;
+  }
+  /** Contents Item */
+  .W1JhWxuv {
+    width: 25%;
+  }
 }
 html {
-  background: var(--background);
-  color: var(--color);
-  font: var(--font);
+  background: $background;
+  color: $color;
+  font: $font;
   user-select: none;
 }
 body {
@@ -54,14 +120,14 @@ body {
     width: 0.5rem;
   }
   &::-webkit-scrollbar-thumb {
-    background: var(--background-accent);
+    background: $background-accent;
     border-radius: 0.25rem;
-    box-shadow: inset 0 0 0.25rem var(--background);
+    box-shadow: inset 0 0 0.25rem $background;
   }
   &::-webkit-scrollbar-track {
-    background: var(--background);
+    background: $background;
     border-radius: 0.25rem;
-    box-shadow: inset 0 0 0.25rem var(--background-accent);
+    box-shadow: inset 0 0 0.25rem $background-accent;
   }
 }
 .q6kpK1jH {
@@ -86,7 +152,7 @@ body {
   }
 }
 .TnBfB6P0 {
-  color: var(--color);
+  color: $color;
   text-decoration: none;
 }
 .Ep6gOPeS {
@@ -101,8 +167,8 @@ body {
   margin: 0 1rem;
 }
 #mWYXHFlu {
-  background: var(--background);
-  border: solid 0.1rem var(--background-accent);
+  background: $background;
+  border: solid 0.1rem $background-accent;
   border-radius: 0.5rem;
   box-sizing: border-box;
   color: var(--color);
@@ -115,11 +181,11 @@ body {
   width: 100%;
 }
 #SYaLdKxJ {
-  background: var(--background-accent);
+  background: $background-accent;
   border: 0;
   border-radius: 0.5rem;
   box-sizing: border-box;
-  color: var(--color-accent);
+  color: $color-accent;
   cursor: pointer;
   display: block;
   font: inherit;
@@ -146,28 +212,18 @@ body {
   width: 50%;
 }
 .TVOxHpZ9 {
-  background: var(--background);
-  border: solid 0.1rem var(--background-accent);
+  background: $background;
+  border: solid 0.1rem $background-accent;
   border-radius: 1rem;
-  color: var(--color);
+  color: $color;
   display: block;
   padding: 1rem;
   margin: 0.5rem;
   text-decoration: none;
-  &[category = 'article'] .eFcynxxU {
-    border-bottom-color: var(--green);
-  }
-  &[category = 'service'] .eFcynxxU {
-    border-bottom-color: var(--blue);
-  }
-  &[category = 'pixiv'] .eFcynxxU {
-    border-bottom-color: var(--cyan);
-  }
-  &[category = 'youtube'] .eFcynxxU {
-    border-bottom-color: var(--red);
-  }
-  &[category = 'other'] .eFcynxxU {
-    border-bottom-color: var(--gray);
+  @each $category in $categories {
+    &[category = '#{$category}'] .child {
+      border-bottom-color: color-by-category('#{$category}');
+    }
   }
 }
 .eFcynxxU {
@@ -183,7 +239,7 @@ body {
 .RaWchbnJ {
   position: relative;
   &::before {
-    background: var(--white);
+    background: $white;
     content: '';
     display: block;
     padding-top: 100%;
@@ -199,12 +255,12 @@ body {
 }
 /** Footer */
 #HbKXoZ1j {
-  background: var(--background-accent);
+  background: $background-accent;
   padding: 1rem;
 }
 #EHsQtYhc {
   align-items: flex-start;
-  border: solid 0.1rem var(--blue);
+  border: solid 0.1rem $blue;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -223,24 +279,24 @@ body {
 .B8bMFMni {
   list-style: none;
   &:first-child {
-    border-bottom: solid 0.1rem var(--gray);
+    border-bottom: solid 0.1rem $gray;
     padding-bottom: 0.5rem;
     text-align: center;
   }
 }
 .bjIdUiG9 {
   align-items: center;
-  color: var(--color-accent);
+  color: $color-accent;
   display: flex;
   padding: 0.5rem 1rem;
   text-decoration: none;
   &:hover {
-    color: var(--color);
-    background: var(--background);
+    color: $color;
+    background: $background;
   }
 }
 :not(.bjIdUiG9) > .RXXkMLos {
-  color: var(--color-accent);
+  color: $color-accent;
 }
 .O9t87lx5 {
   display: inline-block;
@@ -276,119 +332,83 @@ body {
 }
 @keyframes loading {
   0%, 100% {
-    box-shadow: var(--loading-marker-0) var(--white),
-                var(--loading-marker-1) var(--lightgray),
-                var(--loading-marker-2) var(--gray),
-                var(--loading-marker-3) var(--darkgray),
-                var(--loading-marker-4) var(--darkgray),
-                var(--loading-marker-5) var(--darkgray),
-                var(--loading-marker-6) var(--darkgray),
-                var(--loading-marker-7) var(--darkgray);
+    box-shadow: $loading-marker-0 $white,
+                $loading-marker-1 $lightgray,
+                $loading-marker-2 $gray,
+                $loading-marker-3 $darkgray,
+                $loading-marker-4 $darkgray,
+                $loading-marker-5 $darkgray,
+                $loading-marker-6 $darkgray,
+                $loading-marker-7 $darkgray;
   }
   12.5% {
-    box-shadow: var(--loading-marker-0) var(--darkgray),
-                var(--loading-marker-1) var(--white),
-                var(--loading-marker-2) var(--lightgray),
-                var(--loading-marker-3) var(--gray),
-                var(--loading-marker-4) var(--darkgray),
-                var(--loading-marker-5) var(--darkgray),
-                var(--loading-marker-6) var(--darkgray),
-                var(--loading-marker-7) var(--darkgray);
+    box-shadow: $loading-marker-0 $darkgray,
+                $loading-marker-1 $white,
+                $loading-marker-2 $lightgray,
+                $loading-marker-3 $gray,
+                $loading-marker-4 $darkgray,
+                $loading-marker-5 $darkgray,
+                $loading-marker-6 $darkgray,
+                $loading-marker-7 $darkgray;
   }
   25% {
-    box-shadow: var(--loading-marker-0) var(--darkgray),
-                var(--loading-marker-1) var(--darkgray),
-                var(--loading-marker-2) var(--white),
-                var(--loading-marker-3) var(--lightgray),
-                var(--loading-marker-4) var(--gray),
-                var(--loading-marker-5) var(--darkgray),
-                var(--loading-marker-6) var(--darkgray),
-                var(--loading-marker-7) var(--darkgray);
+    box-shadow: $loading-marker-0 $darkgray,
+                $loading-marker-1 $darkgray,
+                $loading-marker-2 $white,
+                $loading-marker-3 $lightgray,
+                $loading-marker-4 $gray,
+                $loading-marker-5 $darkgray,
+                $loading-marker-6 $darkgray,
+                $loading-marker-7 $darkgray;
   }
   37.5% {
-    box-shadow: var(--loading-marker-0) var(--darkgray),
-                var(--loading-marker-1) var(--darkgray),
-                var(--loading-marker-2) var(--darkgray),
-                var(--loading-marker-3) var(--white),
-                var(--loading-marker-4) var(--lightgray),
-                var(--loading-marker-5) var(--gray),
-                var(--loading-marker-6) var(--darkgray),
-                var(--loading-marker-7) var(--darkgray);
+    box-shadow: $loading-marker-0 $darkgray,
+                $loading-marker-1 $darkgray,
+                $loading-marker-2 $darkgray,
+                $loading-marker-3 $white,
+                $loading-marker-4 $lightgray,
+                $loading-marker-5 $gray,
+                $loading-marker-6 $darkgray,
+                $loading-marker-7 $darkgray;
   }
   50% {
-    box-shadow: var(--loading-marker-0) var(--darkgray),
-                var(--loading-marker-1) var(--darkgray),
-                var(--loading-marker-2) var(--darkgray),
-                var(--loading-marker-3) var(--darkgray),
-                var(--loading-marker-4) var(--white),
-                var(--loading-marker-5) var(--lightgray),
-                var(--loading-marker-6) var(--gray),
-                var(--loading-marker-7) var(--darkgray);
+    box-shadow: $loading-marker-0 $darkgray,
+                $loading-marker-1 $darkgray,
+                $loading-marker-2 $darkgray,
+                $loading-marker-3 $darkgray,
+                $loading-marker-4 $white,
+                $loading-marker-5 $lightgray,
+                $loading-marker-6 $gray,
+                $loading-marker-7 $darkgray;
   }
   62.5% {
-    box-shadow: var(--loading-marker-0) var(--darkgray),
-                var(--loading-marker-1) var(--darkgray),
-                var(--loading-marker-2) var(--darkgray),
-                var(--loading-marker-3) var(--darkgray),
-                var(--loading-marker-4) var(--darkgray),
-                var(--loading-marker-5) var(--white),
-                var(--loading-marker-6) var(--lightgray),
-                var(--loading-marker-7) var(--gray);
+    box-shadow: $loading-marker-0 $darkgray,
+                $loading-marker-1 $darkgray,
+                $loading-marker-2 $darkgray,
+                $loading-marker-3 $darkgray,
+                $loading-marker-4 $darkgray,
+                $loading-marker-5 $white,
+                $loading-marker-6 $lightgray,
+                $loading-marker-7 $gray;
   }
   75% {
-    box-shadow: var(--loading-marker-0) var(--gray),
-                var(--loading-marker-1) var(--darkgray),
-                var(--loading-marker-2) var(--darkgray),
-                var(--loading-marker-3) var(--darkgray),
-                var(--loading-marker-4) var(--darkgray),
-                var(--loading-marker-5) var(--darkgray),
-                var(--loading-marker-6) var(--white),
-                var(--loading-marker-7) var(--lightgray);
+    box-shadow: $loading-marker-0 $gray,
+                $loading-marker-1 $darkgray,
+                $loading-marker-2 $darkgray,
+                $loading-marker-3 $darkgray,
+                $loading-marker-4 $darkgray,
+                $loading-marker-5 $darkgray,
+                $loading-marker-6 $white,
+                $loading-marker-7 $lightgray;
   }
   87.5% {
-    box-shadow: var(--loading-marker-0) var(--lightgray),
-                var(--loading-marker-1) var(--gray),
-                var(--loading-marker-2) var(--darkgray),
-                var(--loading-marker-3) var(--darkgray),
-                var(--loading-marker-4) var(--darkgray),
-                var(--loading-marker-5) var(--darkgray),
-                var(--loading-marker-6) var(--darkgray),
-                var(--loading-marker-7) var(--white);
+    box-shadow: $loading-marker-0 $lightgray,
+                $loading-marker-1 $gray,
+                $loading-marker-2 $darkgray,
+                $loading-marker-3 $darkgray,
+                $loading-marker-4 $darkgray,
+                $loading-marker-5 $darkgray,
+                $loading-marker-6 $darkgray,
+                $loading-marker-7 $white;
   }
-}
-@media screen and (min-width: 1024px) {
-  :root:not([sp]) {
-    --font: 20px serif;
-    #Zh6Jspc7 {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      grid-template-rows: auto auto;
-      grid-template-areas: 'byGCb13G Yzqv6tkI'
-                           'mvUPRULS mvUPRULS'
-    }
-    #byGCb13G {
-      grid-area: byGCb13G;
-      margin: 0;
-    }
-    #Oj1DovqO {
-      max-height: 2rem;
-    }
-    #mvUPRULS {
-      grid-area: mvUPRULS;
-      margin: 0 1rem;
-    }
-    #Yzqv6tkI {
-      grid-area: Yzqv6tkI;
-      margin: 1rem;
-    }
-    #mWYXHFlu {
-      margin: 0;
-      max-width: 20rem;
-    }
-    #SYaLdKxJ {
-      display: none;
-    }
-    .W1JhWxuv {
-      width: 25%;
-    }
 }
