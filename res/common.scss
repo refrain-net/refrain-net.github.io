@@ -57,42 +57,8 @@ $breakpoints: (
 
 @include media-query {
   $font: 10px;
-  #Zh6Jspc7 {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-    grid-template-areas: 'byGCb13G Yzqv6tkI'
-                         'mvUPRULS mvUPRULS';
-  }
-  #byGCb13G {
-    grid-area: byGCb13G;
-    margin: 0;
-  }
-  #Oj1DovqO {
-    max-height: 2rem;
-  }
-  /** Breadcrumbs */
-  #mvUPRULS {
-    grid-area: mvUPRULS;
-    margin: 0 1rem;
-  }
-  /** Search Form */
-  #Yzqv6tkI {
-    grid-area: Yzqv6tkI;
-    margin: 1rem;
-  }
-  #mWYXHFlu {
-    margin: 0;
-    max-width: 20rem;
-  }
-  #SYaLdKxJ {
-    display: none;
-  }
-  /** Contents Item */
-  .W1JhWxuv {
-    width: 25%;
-  }
 }
+
 html {
   background: $background;
   color: $color;
@@ -105,20 +71,40 @@ body {
   max-width: 51.2rem;
 }
 /** header */
+#Zh6Jspc7 {
+  @include media-query {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 'byGCb13G Yzqv6tkI'
+                         'mvUPRULS mvUPRULS';
+  }
+}
 #byGCb13G {
   align-items: center;
   display: flex;
   justify-content: center;
   margin: 1rem;
   text-decoration: none;
+  @include media-query {
+    grid-area: byGCb13G;
+    margin: 0;
+  }
 }
 #Oj1DovqO {
   display: block;
   max-width: 100%;
+  @include media-query {
+    max-height: 2rem;
+  }
 }
 /** Breadcrumbs */
 #mvUPRULS {
   margin: 1rem;
+  @include media-query {
+    grid-area: mvUPRULS;
+    margin: 0 1rem;
+  }
 }
 #YFoSPTA3 {
   display: flex;
@@ -175,6 +161,10 @@ body {
 #Yzqv6tkI {
   display: flex;
   margin: 0 1rem;
+  @include media-query {
+    grid-area: Yzqv6tkI;
+    margin: 1rem;
+  }
 }
 #mWYXHFlu {
   background: $background;
@@ -189,6 +179,12 @@ body {
   outline: 0;
   padding: 0.5rem;
   width: 100%;
+  @include media-query {
+    #mWYXHFlu {
+      margin: 0;
+      max-width: 20rem;
+    }
+  }
 }
 #SYaLdKxJ {
   background: $background-accent;
@@ -203,6 +199,11 @@ body {
   outline: 0;
   padding: 0;
   width: 4rem;
+  @include media-query {
+    #SYaLdKxJ {
+      display: none;
+    }
+  }
 }
 /** main */
 #FE9UGRQR {
@@ -220,6 +221,9 @@ body {
 /** Contents Item */
 .W1JhWxuv {
   width: 50%;
+  @include media-query {
+    width: 25%;
+  }
 }
 .TVOxHpZ9 {
   background: $background;
