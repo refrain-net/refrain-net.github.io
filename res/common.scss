@@ -3,12 +3,12 @@
 
 @charset 'utf-8';
 
-@import url('color.css');
+@import 'color.css';
 
-$background: var(--white);
-$background-accent: var(--black);
-$color: var(--black);
-$color-accent: var(--white);
+$background: $white;
+$background-accent: $black;
+$color: $black;
+$color-accent: $white;
 $font: 10px serif;
 $loading-marker-0: 0 4rem 0 0;
 $loading-marker-1: 2.82rem 2.82rem 0 0;
