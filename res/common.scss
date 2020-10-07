@@ -102,7 +102,7 @@ body {
   margin: 1rem;
   @include media-query {
     grid-area: mvUPRULS;
-    margin: 0 1rem;
+    margin: 0 1rem !important;
   }
 }
 #YFoSPTA3 {
