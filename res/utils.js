@@ -53,4 +53,5 @@ Math.median = (...values) => {
       : (values[index - 1] + values[index]) / 2;
 };
 Math.sum = (...values) => values.filter(isNumber).reduce((accumulator, currentValue) => accumulator + currentValue);
+window.isMobile = () => /ip(one|(a|o)d)|android.*mobile/i.test(navigator.userAgent));
 window.isNumber = value => typeof value === 'number' && isFinite(value);
