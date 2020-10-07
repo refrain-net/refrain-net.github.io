@@ -31,4 +31,3 @@ const categories = {
   service: 'サービス',
   youtube: 'YouTube'
 };
-if (/ip(one|(a|o)d)|android.*mobile/i.test(navigator.userAgent)) document.documentElement.setAttribute('sp', true);
