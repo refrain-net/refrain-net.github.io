@@ -3,7 +3,7 @@
 
 @charset 'utf-8';
 
-@import 'color';
+@import url('color.css');
 
 $background: var(--white);
 $background-accent: var(--black);
