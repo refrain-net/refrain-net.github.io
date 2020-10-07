@@ -231,7 +231,7 @@ body {
   margin: 0.5rem;
   text-decoration: none;
   @each $category in $categories {
-    &[category = '#{$category}'] .child {
+    &[category = '#{$category}'] .eFcynxxU {
       border-bottom-color: color-by-category('#{$category}');
     }
   }
