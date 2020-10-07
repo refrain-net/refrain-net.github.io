@@ -55,15 +55,14 @@ $breakpoints: (
   }
 }
 
-@include media-query {
-  $font: 20px serif;
-}
-
 html {
   background: $background;
   color: $color;
   font: $font;
   user-select: none;
+  @include media-query {
+    font-size: 20px;
+  }
 }
 body {
   line-height: 1;
