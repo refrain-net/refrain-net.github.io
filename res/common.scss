@@ -49,6 +49,20 @@ $breakpoints: (
   @return $result;
 }
 
+@mixin animation($animation-name) {
+  animation: $animation-name;
+}
+@mixin keyframes($animation-name) {
+  @keyframes $animation-name {
+    @content;
+  }
+}
+@mixin media-query($breakpoint: pc) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
 @include keyframe(loading) {
   0%, 100% {
     box-shadow: $loading-marker-0 $white,
@@ -129,20 +143,6 @@ $breakpoints: (
                 $loading-marker-5 $darkgray,
                 $loading-marker-6 $darkgray,
                 $loading-marker-7 $white;
-  }
-}
-
-@mixin animation($animation-name) {
-  animation: $animation-name;
-}
-@mixin keyframes($animation-name) {
-  @keyframes $animation-name {
-    @content;
-  }
-}
-@mixin media-query($breakpoint: pc) {
-  @media #{map-get($breakpoints, $breakpoint)} {
-    @content;
   }
 }
 
