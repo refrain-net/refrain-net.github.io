@@ -63,7 +63,7 @@ $breakpoints: (
   }
 }
 
-@include keyframe(loading) {
+@include keyframes(loading) {
   0%, 100% {
     box-shadow: $loading-marker-0 $white,
                 $loading-marker-1 $lightgray,
