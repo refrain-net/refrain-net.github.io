@@ -170,7 +170,7 @@ body {
   border: solid 0.1rem $background-accent;
   border-radius: 0.5rem;
   box-sizing: border-box;
-  color: var(--color);
+  color: $color;
   display: block;
   font: inherit;
   height: 2rem;
@@ -199,9 +199,6 @@ body {
   @include media-query {
     display: none;
   }
-}
-/** main */
-#FE9UGRQR {
 }
 /** Main Page & Search Page */
 #c6JO6k62 {
@@ -323,7 +320,7 @@ body {
 /** Loading Dialog */
 #MsDGo7Eg {
   align-items: center;
-  background: black;
+  background: $black;
   display: flex;
   height: 100%;
   justify-content: center;
