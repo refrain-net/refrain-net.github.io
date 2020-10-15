@@ -53,7 +53,7 @@ $breakpoints: (
   animation: $animation-name;
 }
 @mixin keyframes($animation-name) {
-  @keyframes $animation-name {
+  @keyframes #{$animation-name} {
     @content;
   }
 }
