@@ -425,5 +425,5 @@ body {
   width: 2rem;
   height: 2rem;
   border-radius: 1rem;
-  @include animation(loading 1s infinite ease);
+  @include animation(loading 1s ease 0s infinite);
 }
