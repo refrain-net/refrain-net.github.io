@@ -36,8 +36,7 @@ String.prototype.toElement = function () {
   div.innerHTML = this;
   return div.firstElementChild;
 };
-document.getQueryParameters = () => location.search.slice(1).split('&').map(currentValue => currentValue.split('=')).reduce((accumulator, currentValue) => {
-  const [ key, value ] = currentValue;
+document.getQueryParameters = () => location.search.slice(1).split('&').map(currentValue => currentValue.split('=')).reduce((accumulator, [ key, value ]) => {
   accumulator[key] = value || key;
   return accumulator;
 }, {});
@@ -45,12 +44,16 @@ Math.average = (...values) => {
   values = values.filter(isNumber);
   return Math.sum.apply(null, values) / values.length;
 };
+Math.factorization = value => {
+  const result = [ ];
+  let divisor = 2;
+  while (divisor <= value / 2) divisor % value ? divisor ++ : (result.push(divisor), value /= divisor);
+  return result.concat(value);
+};
 Math.median = (...values) => {
   values = values.filter(isNumber);
   const index = Math.floor(values.length / 2);
-  return values.length % 2
-      ? values[index]
-      : (values[index - 1] + values[index]) / 2;
+  return values.length % 2 ? values[index] : (values[index - 1] + values[index]) / 2;
 };
 Math.sum = (...values) => values.filter(isNumber).reduce((accumulator, currentValue) => accumulator + currentValue);
 window.isMobile = () => /ip(one|(a|o)d)|android.*mobile/i.test(navigator.userAgent);
