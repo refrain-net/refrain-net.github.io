@@ -1,15 +1,14 @@
 'use strict';
 function createListItem (key) {
   const { category = 'other', image = '/res/favicon.png', title = '', url = '' } = this[key];
-  const element = (`<section class = 'W1JhWxuv' title = ${title}>
+  c6JO6k62.prependChild((`<section class = 'W1JhWxuv' title = ${title}>
   <a category = ${category} class = 'TVOxHpZ9' href = ${url === '' ? `/article/?category=${category}&key=${key}` : url} target = '_new'>
     <span class = 'eFcynxxU'>${title}</span>
     <div class = 'RaWchbnJ'>
       <img class = 'WaWu7Va9' src = ${image} />
     </div>
   </a>
-</section>`).toElement();
-  c6JO6k62.prependChild(element);
+</section>`).toElement());
 }
 function dismissDialog () {
   MsDGo7Eg.style.display = 'none';
