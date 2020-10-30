@@ -37,6 +37,8 @@ $breakpoints: (
   $result: transparent;
   @if $category == 'article' {
     $result: $green;
+  } @else if $category == 'content' {
+    $result: $yellow;
   } @else if $category == 'service' {
     $result: $blue;
   } @else if $category == 'pixiv' {
