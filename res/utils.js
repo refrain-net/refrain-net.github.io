@@ -58,3 +58,37 @@ Math.median = (...values) => {
 Math.sum = (...values) => values.filter(isNumber).reduce((accumulator, currentValue) => accumulator + currentValue);
 window.isMobile = () => /ip(one|(a|o)d)|android.*mobile/i.test(navigator.userAgent);
 window.isNumber = value => typeof value === 'number' && isFinite(value);
+class Proc {
+  #error = null;
+  #result = null;
+  constructor (callback) {
+    try {
+      this.#result = callback();
+    } catch (error) {
+      this.#error = error;
+    }
+  }
+  static create (callback) {
+    return new Proc(callback);
+  }
+  done (callback) {
+    if (!(this.#error instanceof Error)) {
+      try {
+        this.#error = null;
+        this.#result = callback(this.#result);
+      } catch (error) {
+        this.#error = error;
+        this.#result = null;
+      }
+    }
+    return this;
+  }
+  fail (callback) {
+    if (this.#error instanceof Error) {
+      callback(this.#error);
+      this.#error = null;
+      this.#result = null;
+    }
+    return this;
+  }
+}
