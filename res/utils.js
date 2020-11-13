@@ -71,6 +71,12 @@ class Proc {
   static create (callback) {
     return new Proc(callback);
   }
+  get error () {
+    return this.#error;
+  }
+  get result () {
+    return this.#result;
+  }
   done (callback) {
     if (!(this.#error instanceof Error)) {
       try {
