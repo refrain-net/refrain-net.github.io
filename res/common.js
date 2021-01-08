@@ -1,6 +1,6 @@
 'use strict';
 function createListItem (key) {
-  const { category = 'other', image = '/res/favicon.png', title = '', url = '' } = this[key];
+  const {category = 'other', image = '/res/favicon.png', title = '', url = ''} = this[key];
   c6JO6k62.prependChild((`<section class = 'W1JhWxuv' title = ${title}>
   <a category = ${category} class = 'TVOxHpZ9' href = ${url === '' ? `/article/?category=${category}&key=${key}` : url} target = '_new'>
     <span class = 'eFcynxxU'>${title}</span>
