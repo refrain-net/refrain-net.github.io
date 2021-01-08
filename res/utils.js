@@ -1,12 +1,9 @@
 'use strict';
-Array.prototype.random = function () {
-  return this[(Math.random() * this.length) | 0];
-};
 Array.prototype.shuffle = function () {
   let index = this.length, random;
   while (index > 0) {
     random = (Math.random() * index --) | 0;
-    [ this[index], this[random] ] = [ this[random], this[index] ];
+    [this[index], this[random]] = [this[random], this[index]];
   }
   return this;
 };
@@ -14,13 +11,15 @@ Date.prototype.isWeekend = function () {
   return this.getDay() % 6 === 0;
 };
 HTMLElement.prototype.copy = function () {
-  const range = document.createRange();
-  range.selectNode(this);
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  selection.addRange(range);
+  const onCopy = event => {
+    const {clipboardData} = event;
+    clipboardData.setData('text/html', this.outerHTML);
+    clipboardData.setData('text/plain', this.outerHTML);
+    event.preventDefault();
+    document.removeEventListener('copy', onCopy, false);
+  };
+  document.addEventListener('copy', onCopy, false);
   document.execCommand('copy');
-  selection.removeAllRanges();
 };
 HTMLElement.prototype.prependChild = function (element) {
   this.insertBefore(element, this.firstChild);
@@ -36,7 +35,7 @@ String.prototype.toElement = function () {
   div.innerHTML = this;
   return div.firstElementChild;
 };
-document.getQueryParameters = () => location.search.slice(1).split('&').map(currentValue => currentValue.split('=')).reduce((accumulator, [ key, value ]) => {
+document.getParameters = () => location.search.slice(1).split('&').map(currentValue => currentValue.split('=')).reduce((accumulator, [ key, value ]) => {
   accumulator[key] = value || key;
   return accumulator;
 }, {});
@@ -58,43 +57,3 @@ Math.median = (...values) => {
 Math.sum = (...values) => values.filter(isNumber).reduce((accumulator, currentValue) => accumulator + currentValue);
 window.isMobile = () => /ip(one|(a|o)d)|android.*mobile/i.test(navigator.userAgent);
 window.isNumber = value => typeof value === 'number' && isFinite(value);
-class Proc {
-  #error = null;
-  #result = null;
-  constructor (callback) {
-    try {
-      this.#result = callback();
-    } catch (error) {
-      this.#error = error;
-    }
-  }
-  static create (callback) {
-    return new Proc(callback);
-  }
-  get error () {
-    return this.#error;
-  }
-  get result () {
-    return this.#result;
-  }
-  done (callback) {
-    if (!(this.#error instanceof Error)) {
-      try {
-        this.#error = null;
-        this.#result = callback(this.#result);
-      } catch (error) {
-        this.#error = error;
-        this.#result = null;
-      }
-    }
-    return this;
-  }
-  fail (callback) {
-    if (this.#error instanceof Error) {
-      callback(this.#error);
-      this.#error = null;
-      this.#result = null;
-    }
-    return this;
-  }
-}
