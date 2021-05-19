@@ -1,2 +1,4 @@
+(async () => {
 'use strict';
-dismissDialog();
+  dismissDialog();
+})();
