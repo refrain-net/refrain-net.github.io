@@ -1,14 +1,8 @@
 'use strict';
 function createListItem (key) {
   const {category = 'other', image = '/res/favicon.png', title = '', url = ''} = this[key];
-  c6JO6k62.prependChild((`<section class = 'W1JhWxuv' title = ${title}>
-  <a category = ${category} class = 'TVOxHpZ9' href = ${url === '' ? `/article/?category=${category}&key=${key}` : url} target = '_new'>
-    <span class = 'eFcynxxU'>${title}</span>
-    <div class = 'RaWchbnJ'>
-      <img class = 'WaWu7Va9' src = ${image} />
-    </div>
-  </a>
-</section>`).toElement());
+  const href = url === '' ? `/article/?category=${category}&key=${key}` : url;
+  c6JO6k62.innerHTML += `<section class = 'W1JhWxuv' title = ${title}><a category = ${category} class = 'TVOxHpZ9' href = ${href} target = '_new'><span class = 'eFcynxxU'>${title}</span><div class = 'RaWchbnJ'><img class = 'WaWu7Va9' src = ${image} /></div></a></section>`;
 }
 function dismissDialog () {
   MsDGo7Eg.style.display = 'none';
@@ -26,7 +20,6 @@ SYaLdKxJ.addEventListener('click', event => location.href = `/?keyword=${mWYXHFl
 const categories = {
   article: '記事',
   other: 'その他',
-  pixiv: 'Pixiv',
   service: 'サービス',
-  youtube: 'YouTube'
+  content: 'コンテンツ'
 };
