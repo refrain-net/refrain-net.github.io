@@ -57,3 +57,4 @@ Math.median = (...values) => {
 Math.sum = (...values) => values.filter(isNumber).reduce((accumulator, currentValue) => accumulator + currentValue);
 window.isMobile = () => /ip(one|(a|o)d)|android.*mobile/i.test(navigator.userAgent);
 window.isNumber = value => typeof value === 'number' && isFinite(value);
+window.sleep = milliseconds => new Promise((resolve) => setTimeout(resolve, milliseconds));
