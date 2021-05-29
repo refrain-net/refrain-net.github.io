@@ -46,7 +46,7 @@ Math.average = (...values) => {
 Math.factorization = value => {
   const result = [];
   let divisor = 2;
-  while (divisor <= value / 2) divisor % value ? divisor ++ : (result.push(divisor), value /= divisor);
+  while (divisor <= value / 2) value % divisor ? divisor ++ : (result.push(divisor), value /= divisor);
   return result.concat(value);
 };
 Math.median = (...values) => {
