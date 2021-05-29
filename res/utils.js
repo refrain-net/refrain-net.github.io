@@ -44,7 +44,7 @@ Math.average = (...values) => {
   return Math.sum.apply(null, values) / values.length;
 };
 Math.factorization = value => {
-  const result = [ ];
+  const result = [];
   let divisor = 2;
   while (divisor <= value / 2) divisor % value ? divisor ++ : (result.push(divisor), value /= divisor);
   return result.concat(value);
