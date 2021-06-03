@@ -3,23 +3,8 @@
 
 @charset 'utf-8';
 
-$red: rgb(191, 63, 63);
-$green: rgb(63, 191, 63);
-$blue: rgb(63, 63, 191);
-$magenta: rgb(191, 63, 191);
-$yellow: rgb(191, 191, 63);
-$cyan: rgb(63, 191, 191);
-$white: rgb(239, 239, 239);
-$lightgray: rgb(223, 223, 223);
-$gray: rgb(127, 127, 127);
-$darkgray: rgb(31, 31, 31);
-$black: rgb(15, 15, 15);
+@import '/res/variables';
 
-$background: $white;
-$background-accent: $black;
-$color: $black;
-$color-accent: $white;
-$font: 10px serif;
 $loading-marker-0: 0 4rem 0 0;
 $loading-marker-1: 2.82rem 2.82rem 0 0;
 $loading-marker-2: 4rem 0 0 0;
@@ -29,9 +14,6 @@ $loading-marker-5: -2.82rem -2.82rem 0 0;
 $loading-marker-6: -4rem 0 0 0;
 $loading-marker-7: -2.82rem 2.82rem 0 0;
 $categories: 'article', 'content', 'service', 'other';
-$breakpoints: (
-  'pc': 'screen and (min-width: 1024px)'
-);
 
 @function color-by-category($category) {
   $result: transparent;
