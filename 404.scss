@@ -3,12 +3,12 @@
 
 @charset 'utf-8';
 
-@import '/res/variables';
+@import '/res/vars.css';
 @import '/res/common.css';
 
 #WSeaG6gm {
-  background: $blue;
-  color: $white;
+  background: var(blue);
+  color: var(white);
   text-align: center;
 }
 #rsru9Qiq {
