@@ -3,7 +3,7 @@
 
 @charset 'utf-8';
 
-$styles: (
+$variants: (
   red: rgb(191, 63, 63),
   green: rgb(63, 191, 63),
   blue: rgb(63, 63, 191),
@@ -25,10 +25,12 @@ $styles: (
   )
 );
 
-@each $key, $style in $styles {
-  --style-#{$key}: #{$style};
+body {
+  @each $key, $variant in $variants {
+    --variant-#{$key}: #{$variant};
+  }
 }
 
-@function style ($style_name) {
-  @return var(--style-#{style_name});
+@function variant ($var_name) {
+  @return var(--variant-#{var_name});
 }
