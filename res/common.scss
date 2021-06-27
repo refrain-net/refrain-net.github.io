@@ -38,7 +38,7 @@ $categories: 'article', 'content', 'service', 'other';
   }
 }
 @mixin media-query($breakpoint: pc) {
-  @media #{map-get($breakpoints, $breakpoint)} {
+  @media #{map-get(variant(breakpoints), $breakpoint)} {
     @content;
   }
 }
