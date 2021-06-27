@@ -1,0 +1,34 @@
+---
+---
+
+@charset 'utf-8';
+
+$styles: (
+  red: rgb(191, 63, 63),
+  green: rgb(63, 191, 63),
+  blue: rgb(63, 63, 191),
+  magenta: rgb(191, 63, 191),
+  yellow: rgb(191, 191, 63),
+  cyan: rgb(63, 191, 191),
+  white: rgb(239, 239, 239),
+  lightgray: rgb(223, 223, 223),
+  gray: rgb(127, 127, 127),
+  darkgray: rgb(31, 31, 31),
+  black: rgb(15, 15, 15),
+  background: style(white),
+  background-accent: style(black),
+  color: style(black),
+  color-accent: style(white),
+  font: 10px serif,
+  breakpoints: (
+    'pc': 'screen and (min-width: 1024px)'
+  )
+);
+
+@each $key, $style in $styles {
+  --style-#{$key}: #{$style};
+}
+
+@function style ($style_name) {
+  @return var(--style-#{style_name});
+}
