@@ -7,6 +7,9 @@ Array.prototype.shuffle = function () {
   }
   return this;
 };
+Array.prototype.transpose = function () {
+  return this.reduce((accumulator, currentValue) => currentValue.map((_, index) => (accumulator[index] || []).concat(currentValue[index])), []);
+};
 Date.prototype.isWeekend = function () {
   return this.getDay() % 6 === 0;
 };
