@@ -3,7 +3,7 @@
 
 @charset 'utf-8';
 
-@import '/res/variables';
+@import '/res/vars.css';
 
 $loading-marker-0: 0 4rem 0 0;
 $loading-marker-1: 2.82rem 2.82rem 0 0;
@@ -18,13 +18,13 @@ $categories: 'article', 'content', 'service', 'other';
 @function color-by-category($category) {
   $result: transparent;
   @if $category == 'article' {
-    $result: $green;
+    $result: variant(green);
   } @else if $category == 'content' {
-    $result: $yellow;
+    $result: variant(yellow);
   } @else if $category == 'service' {
-    $result: $blue;
+    $result: variant(blue);
   } @else if $category == 'other' {
-    $result: $gray;
+    $result: variant(gray);
   }
   @return $result;
 }
@@ -45,91 +45,91 @@ $categories: 'article', 'content', 'service', 'other';
 
 @include keyframes(loading) {
   0%, 100% {
-    box-shadow: $loading-marker-0 $white,
-                $loading-marker-1 $lightgray,
-                $loading-marker-2 $gray,
-                $loading-marker-3 $darkgray,
-                $loading-marker-4 $darkgray,
-                $loading-marker-5 $darkgray,
-                $loading-marker-6 $darkgray,
-                $loading-marker-7 $darkgray;
+    box-shadow: $loading-marker-0 variant(white),
+                $loading-marker-1 variant(lightgray),
+                $loading-marker-2 variant(gray),
+                $loading-marker-3 variant(darkgray),
+                $loading-marker-4 variant(darkgray),
+                $loading-marker-5 variant(darkgray),
+                $loading-marker-6 variant(darkgray),
+                $loading-marker-7 variant(darkgray);
   }
   12.5% {
-    box-shadow: $loading-marker-0 $darkgray,
-                $loading-marker-1 $white,
-                $loading-marker-2 $lightgray,
-                $loading-marker-3 $gray,
-                $loading-marker-4 $darkgray,
-                $loading-marker-5 $darkgray,
-                $loading-marker-6 $darkgray,
-                $loading-marker-7 $darkgray;
+    box-shadow: $loading-marker-0 variant(darkgray),
+                $loading-marker-1 variant(white),
+                $loading-marker-2 variant(lightgray),
+                $loading-marker-3 variant(gray),
+                $loading-marker-4 variant(darkgray),
+                $loading-marker-5 variant(darkgray),
+                $loading-marker-6 variant(darkgray),
+                $loading-marker-7 variant(darkgray);
   }
   25% {
-    box-shadow: $loading-marker-0 $darkgray,
-                $loading-marker-1 $darkgray,
-                $loading-marker-2 $white,
-                $loading-marker-3 $lightgray,
-                $loading-marker-4 $gray,
-                $loading-marker-5 $darkgray,
-                $loading-marker-6 $darkgray,
-                $loading-marker-7 $darkgray;
+    box-shadow: $loading-marker-0 variant(darkgray),
+                $loading-marker-1 variant(darkgray),
+                $loading-marker-2 variant(white),
+                $loading-marker-3 variant(lightgray),
+                $loading-marker-4 variant(gray),
+                $loading-marker-5 variant(darkgray),
+                $loading-marker-6 variant(darkgray),
+                $loading-marker-7 variant(darkgray);
   }
   37.5% {
-    box-shadow: $loading-marker-0 $darkgray,
-                $loading-marker-1 $darkgray,
-                $loading-marker-2 $darkgray,
-                $loading-marker-3 $white,
-                $loading-marker-4 $lightgray,
-                $loading-marker-5 $gray,
-                $loading-marker-6 $darkgray,
-                $loading-marker-7 $darkgray;
+    box-shadow: $loading-marker-0 variant(darkgray),
+                $loading-marker-1 variant(darkgray),
+                $loading-marker-2 variant(darkgray),
+                $loading-marker-3 variant(white),
+                $loading-marker-4 variant(lightgray),
+                $loading-marker-5 variant(gray),
+                $loading-marker-6 variant(darkgray),
+                $loading-marker-7 variant(darkgray);
   }
   50% {
-    box-shadow: $loading-marker-0 $darkgray,
-                $loading-marker-1 $darkgray,
-                $loading-marker-2 $darkgray,
-                $loading-marker-3 $darkgray,
-                $loading-marker-4 $white,
-                $loading-marker-5 $lightgray,
-                $loading-marker-6 $gray,
-                $loading-marker-7 $darkgray;
+    box-shadow: $loading-marker-0 variant(darkgray),
+                $loading-marker-1 variant(darkgray),
+                $loading-marker-2 variant(darkgray),
+                $loading-marker-3 variant(darkgray),
+                $loading-marker-4 variant(white),
+                $loading-marker-5 variant(lightgray),
+                $loading-marker-6 variant(gray),
+                $loading-marker-7 variant(darkgray);
   }
   62.5% {
-    box-shadow: $loading-marker-0 $darkgray,
-                $loading-marker-1 $darkgray,
-                $loading-marker-2 $darkgray,
-                $loading-marker-3 $darkgray,
-                $loading-marker-4 $darkgray,
-                $loading-marker-5 $white,
-                $loading-marker-6 $lightgray,
-                $loading-marker-7 $gray;
+    box-shadow: $loading-marker-0 variant(darkgray),
+                $loading-marker-1 variant(darkgray),
+                $loading-marker-2 variant(darkgray),
+                $loading-marker-3 variant(darkgray),
+                $loading-marker-4 variant(darkgray),
+                $loading-marker-5 variant(white),
+                $loading-marker-6 variant(lightgray),
+                $loading-marker-7 variant(gray);
   }
   75% {
-    box-shadow: $loading-marker-0 $gray,
-                $loading-marker-1 $darkgray,
-                $loading-marker-2 $darkgray,
-                $loading-marker-3 $darkgray,
-                $loading-marker-4 $darkgray,
-                $loading-marker-5 $darkgray,
-                $loading-marker-6 $white,
-                $loading-marker-7 $lightgray;
+    box-shadow: $loading-marker-0 variant(gray),
+                $loading-marker-1 variant(darkgray),
+                $loading-marker-2 variant(darkgray),
+                $loading-marker-3 variant(darkgray),
+                $loading-marker-4 variant(darkgray),
+                $loading-marker-5 variant(darkgray),
+                $loading-marker-6 variant(white),
+                $loading-marker-7 variant(lightgray);
   }
   87.5% {
-    box-shadow: $loading-marker-0 $lightgray,
-                $loading-marker-1 $gray,
-                $loading-marker-2 $darkgray,
-                $loading-marker-3 $darkgray,
-                $loading-marker-4 $darkgray,
-                $loading-marker-5 $darkgray,
-                $loading-marker-6 $darkgray,
-                $loading-marker-7 $white;
+    box-shadow: $loading-marker-0 variant(lightgray),
+                $loading-marker-1 variant(gray),
+                $loading-marker-2 variant(darkgray),
+                $loading-marker-3 variant(darkgray),
+                $loading-marker-4 variant(darkgray),
+                $loading-marker-5 variant(darkgray),
+                $loading-marker-6 variant(darkgray),
+                $loading-marker-7 variant(white);
   }
 }
 
 html {
-  background: $background;
-  color: $color;
-  font: $font;
+  background: variant(background);
+  color: variant(color);
+  font: variant(font);
   user-select: none;
   @include media-query {
     font-size: 20px;
@@ -186,14 +186,14 @@ body {
     width: 0.5rem;
   }
   &::-webkit-scrollbar-thumb {
-    background: $background-accent;
+    background: variant(background-accent);
     border-radius: 0.25rem;
-    box-shadow: inset 0 0 0.25rem $background;
+    box-shadow: inset 0 0 0.25rem variant(background);
   }
   &::-webkit-scrollbar-track {
-    background: $background;
+    background: variant(background);
     border-radius: 0.25rem;
-    box-shadow: inset 0 0 0.25rem $background-accent;
+    box-shadow: inset 0 0 0.25rem variant(background-accent);
   }
 }
 .q6kpK1jH {
@@ -218,7 +218,7 @@ body {
   }
 }
 .TnBfB6P0 {
-  color: $color;
+  color: variant(color);
   text-decoration: none;
 }
 .Ep6gOPeS {
@@ -237,11 +237,11 @@ body {
   }
 }
 #mWYXHFlu {
-  background: $background;
-  border: solid 0.1rem $background-accent;
+  background: variant(background);
+  border: solid 0.1rem variant(background-accent);
   border-radius: 0.5rem;
   box-sizing: border-box;
-  color: $color;
+  color: variant(color);
   display: block;
   font: inherit;
   height: 2rem;
@@ -255,11 +255,11 @@ body {
   }
 }
 #SYaLdKxJ {
-  background: $background-accent;
+  background: variant(background-accent);
   border: 0;
   border-radius: 0.5rem;
   box-sizing: border-box;
-  color: $color-accent;
+  color: variant(color-accent);
   cursor: pointer;
   display: block;
   font: inherit;
@@ -289,10 +289,10 @@ body {
   }
 }
 .TVOxHpZ9 {
-  background: $background;
-  border: solid 0.1rem $background-accent;
+  background: variant(background);
+  border: solid 0.1rem variant(background-accent);
   border-radius: 1rem;
-  color: $color;
+  color: variant(color);
   display: block;
   padding: 1rem;
   margin: 0.5rem;
@@ -316,7 +316,7 @@ body {
 .RaWchbnJ {
   position: relative;
   &::before {
-    background: $white;
+    background: variant(white);
     content: '';
     display: block;
     padding-top: 100%;
@@ -332,12 +332,12 @@ body {
 }
 /** Footer */
 #HbKXoZ1j {
-  background: $background-accent;
+  background: variant(background-accent);
   padding: 1rem;
 }
 #EHsQtYhc {
   align-items: flex-start;
-  border: solid 0.1rem $blue;
+  border: solid 0.1rem variant(blue);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -356,24 +356,24 @@ body {
 .B8bMFMni {
   list-style: none;
   &:first-child {
-    border-bottom: solid 0.1rem $gray;
+    border-bottom: solid 0.1rem variant(gray);
     padding-bottom: 0.5rem;
     text-align: center;
   }
 }
 .bjIdUiG9 {
   align-items: center;
-  color: $color-accent;
+  color: variant(color-accent);
   display: flex;
   padding: 0.5rem 1rem;
   text-decoration: none;
   &:hover {
-    color: $color;
-    background: $background;
+    color: variant(color);
+    background: variant(background);
   }
 }
 :not(.bjIdUiG9) > .RXXkMLos {
-  color: $color-accent;
+  color: variant(color-accent);
 }
 .O9t87lx5 {
   display: inline-block;
@@ -391,7 +391,7 @@ body {
 /** Loading Dialog */
 #MsDGo7Eg {
   align-items: center;
-  background: $black;
+  background: variant(black);
   display: flex;
   height: 100%;
   justify-content: center;
