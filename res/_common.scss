@@ -245,8 +245,10 @@ body {
 }
 .B8bMFMni {
   list-style: none;
+  margin-top: 1rem;
   &:first-child {
     border-bottom: solid 0.1rem $gray;
+    margin-top: 0;
     padding-bottom: 0.5rem;
     text-align: center;
   }
