@@ -34,7 +34,7 @@ function createListItems (keys, val) {
     const {category = 'other', image = '/res/favicon.png', title = ''} = val[key];
     let {url = ''} = val[key];
     url ||= `/article/?category=${category}&key=${key}`;
-    c6JO6k62.appendChild((`<section class="W1JhWxuv" title="${title}"><a category="${category}" class="TVOxHpZ9" href="${url}" target="_new"><span class="eFcynxxU">${title}</span><div class="RaWchbnJ"><img class="WaWu7Va9" src="${image}" /></div></a></section>`).toElement());
+    c6JO6k62.appendChild((`<section class="W1JhWxuv" title="${title}"><a category="${category}" class="TVOxHpZ9" href="${url}" target="_new"><span class="eFcynxxU">${title}</span><div class="RaWchbnJ"><img alt="記事のサムネイル" class="WaWu7Va9" src="${image}" /></div></a></section>`).toElement());
   });
 }
   
