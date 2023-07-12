@@ -1,0 +1,23 @@
+@charset 'utf-8';
+
+#page-header {
+  height: 6rem;
+}
+
+#navigation__wrapper {
+}
+#navigation__button--visible {
+  aspect-ratio: 1;
+  background: navy;
+  width: 3rem;
+  position: absolute;
+  right: 0%;
+  top: 0;
+  z-index: 100;
+}
+#navigation-items__wrapper {
+  position: fixed;
+  left: 100%;
+  top: 0;
+  list-style: none;
+}
